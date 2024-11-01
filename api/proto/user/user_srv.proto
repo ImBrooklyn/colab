@@ -1,0 +1,11 @@
+syntax = "proto3";
+package proto;
+import "common.proto";
+import "user/user_model.proto";
+
+option go_package = "colab/api/grpc/user";
+
+
+service UserService {
+  rpc GetUserInfo(IDRequest) returns (UserInfo);
+}

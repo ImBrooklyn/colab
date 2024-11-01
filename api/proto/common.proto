@@ -1,0 +1,19 @@
+syntax = "proto3";
+package proto;
+
+option go_package = "colab/api/common";
+
+message Pagination {
+  uint32 pageNo = 1;
+  uint32 pageSize = 2;
+}
+
+message Flag {
+  bool success = 1;
+}
+
+message IDRequest {
+  int64 id = 1;
+}
+
+message Empty {}

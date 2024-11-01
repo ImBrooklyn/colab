@@ -1,0 +1,37 @@
+syntax = "proto3";
+package proto;
+import "common.proto";
+import "user/user_model.proto";
+
+option go_package = "colab/api/grpc/user";
+
+message SignupRequest {
+  string email = 1;
+  string username = 2;
+  string nickname = 3;
+  string password = 4;
+  string mobile = 5;
+  string smsCode = 6;
+}
+
+message SigninByMobileRequest {
+  string mobile = 1;
+  string smsCode = 2;
+}
+
+message SigninByPasswordRequest {
+  string account = 1;
+  string password = 2;
+  int32 signinType = 3;
+}
+
+message SigninResponse {
+  UserInfo userInfo = 1;
+  repeated OrganizationInfo organizationList = 2;
+}
+
+service UserSignService {
+  rpc Signup(SignupRequest) returns (Flag);
+  rpc SigninByMobile(SigninByMobileRequest) returns (SigninResponse);
+  rpc SigninByPassword(SigninByPasswordRequest) returns (SigninResponse);
+}

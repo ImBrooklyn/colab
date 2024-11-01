@@ -1,0 +1,10 @@
+consul:
+  host: 127.0.0.1
+  port: 8500
+srv:
+  app-name: colab-snowflake
+  tags:
+    - colab
+    - snowflake
+  host: 127.0.0.1
+  port: 9001

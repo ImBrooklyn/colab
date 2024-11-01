@@ -1,0 +1,14 @@
+syntax = "proto3";
+package proto;
+import "common.proto";
+
+option go_package = "colab/api/grpc/message";
+
+message SendSmsCodeRequest {
+  string mobile = 1;
+  string biz = 2;
+}
+
+service MessageService {
+  rpc SendSmsCode(SendSmsCodeRequest) returns (Flag);
+}

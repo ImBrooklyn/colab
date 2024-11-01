@@ -1,0 +1,19 @@
+consul:
+  host: 127.0.0.1
+  port: 8500
+srv:
+  app-name: colab-user
+  tags:
+    - colab
+    - user
+  host: 127.0.0.1
+  port: 9902
+mysql:
+  host: 127.0.0.1
+  port: 3306
+  database: colab
+  username: root
+  password: password
+redis:
+  host: 127.0.0.1
+  port: 6379

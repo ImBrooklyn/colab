@@ -1,0 +1,13 @@
+syntax = "proto3";
+package proto;
+import "common.proto";
+
+option go_package = "colab/api/grpc/snowflake";
+
+message SnowflakeID {
+  int64 id = 1;
+}
+
+service SnowflakeService {
+  rpc NextID(Empty) returns (SnowflakeID);
+}

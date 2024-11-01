@@ -1,0 +1,36 @@
+syntax = "proto3";
+package proto;
+
+option go_package = "colab/api/grpc/portal";
+
+message UserMenuRequest {
+}
+
+message UserMenuItem {
+  int64  id = 1;
+  int64 pid = 2;
+  string title = 3;
+  string icon = 4;
+  string url = 5;
+  string filepath = 6;
+  string params = 7;
+  string node = 8;
+  int32 sort = 9;
+  int32 status = 10;
+  bool isInner = 11;
+  string defaultValues = 12;
+  bool showSlider = 13;
+  string statusText = 14;
+  string innerText = 15;
+  string fullUrl = 16;
+  repeated UserMenuItem children = 17;
+}
+
+message UserMenuResponse {
+  repeated UserMenuItem menus = 1;
+}
+
+
+service MenuService {
+  rpc GetUserMenus(UserMenuRequest) returns (UserMenuResponse);
+}

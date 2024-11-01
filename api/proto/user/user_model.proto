@@ -1,0 +1,21 @@
+syntax = "proto3";
+package proto;
+
+option go_package = "colab/api/grpc/user";
+
+message UserInfo {
+  int64 id = 1;
+  string username = 2;
+  string nickname = 3;
+  string mobile = 4;
+  string email = 5;
+}
+
+message OrganizationInfo {
+  int64 id = 1;
+  string name = 2;
+  string avatar = 3;
+  string description = 4;
+  int64 owner = 5;
+  bool personal = 6;
+}

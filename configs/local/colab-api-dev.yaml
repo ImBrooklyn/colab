@@ -1,0 +1,9 @@
+app-name: colab-api
+port: 8321
+locale: zh
+jwt:
+  access-secret: $4gj2TjH11GiSbRBGzm$^XRoPp0^8V36ZyC7usVCZSjf15**dEEY998j$0VpHrO6
+  expiry: 7
+consul:
+  host: 127.0.0.1
+  port: 8500
